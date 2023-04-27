@@ -2,7 +2,7 @@ const oAuth = "dy71ezmwmejfoyhx8pkntuya1yno2h";
 //const oAuth = "5pm2jgry9oqeghu1nunqe5pprrq3iz";
 
 const nick = "squaresyyy";
-const channel = "boxbox";
+const channel = "squaresyyy";
 const fs = require('fs')
 
 

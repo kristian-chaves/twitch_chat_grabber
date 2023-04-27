@@ -3,17 +3,14 @@ import random
 
 n = 0
 # open file, select random word, finalize word
-valid_words_list = {}
-words = open("words_valid.txt")
+inputs = []
+words = open("Output.txt", encoding="utf8")
+n = 0
 for i in words.readlines():
-    i = i.strip()
-    q = {i: i}
-    valid_words_list.update(q);
+    i = i.split(":")
+    i = i[2].strip()   
+    if(len(i) == 5):
+        inputs.append(i)
     n+=1
-q = "abate"
-z = input()
-w = "asdfa"
-print(q in valid_words_list);
-print(z in valid_words_list);
-print(w in valid_words_list);
-
+print(i)
+    

@@ -14,6 +14,7 @@ global valid_words_list
 
 def intialize_elements():
     global valid_words_list
+    global words_list
     valid_words_list = {}
     # save all valid words
     words = open("words_valid.txt")
@@ -24,15 +25,27 @@ def intialize_elements():
     
     # save all words
     words_list = open("words_list.txt").read().splitlines()
-    word = random.choice(words_list)
-    return word
 
 def user_guess():
     # lets user guess a word, checks if user's guess is valid, returns user guess if valid
     valid_input = False
+    inputs = []
+    # parse through inputs, if length 5 save them
+    words = open("Output.txt", encoding="utf8")
+    for i in words.readlines():
+        i = i.split(":")
+        i = i[2].strip()    
+        if(len(i) == 5):
+            inputs.append(i)
+    words.close()
+
     while valid_input == False:
-        guess = input()
+        guess = random.choice(inputs)
         if(guess in valid_words_list):
+            #re-write Output.txt
+            file = open('Output.txt', 'w')
+            file.write("q:q: spade")
+            file.close()
             return guess
         print(Fore.RED + "invalid word\n")
 
@@ -67,11 +80,13 @@ if __name__ == "__main__":
     word = intialize_elements()
     play = "Y"
     while(play == "Y"):
+        word = random.choice(words_list)
         word_found = False
         guesses = 0
         while guesses < 6 and word_found == False:
             guesses += 1
             print(f"guess: {guesses}/6")
+            time.sleep(15)
             guess = user_guess()
             word_found = word_compare(word, guess)
             
