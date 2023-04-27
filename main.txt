@@ -1,0 +1,50 @@
+from twitchio.ext import commands
+import os
+
+
+bot = commands.Bot(
+    irc_token = os.environ['oauth:6m0bh34th155mbj4gq7a7msv1th2rh'],
+    client_id = os.environ['67524ffnccssubs4c3k9uc9t8wyblb'],
+    nick = 'square_bot',
+    prefix = '!',
+    initial_channels = ['squaresyyy'],
+)
+
+@bot.event
+async def event_message(ctx):
+    print(ctx.author.name)
+    print(ctx.content)
+
+if __name__ == '__main__':
+    bot.run()
+
+"""
+import socket
+import logging
+
+server = 'irc.chat.twitch.tv'
+port = 6667
+nickname = 'wordle_t2'
+token = 'oauth:6m0bh34th155mbj4gq7a7msv1th2rh'
+channel = 'drututt'
+
+logging.basicConfig(level=logging.DEBUG,
+                    format='%(asctime)s — %(message)s',
+                    datefmt='%Y-%m-%d_%H:%M:%S',
+                    handlers=[logging.FileHandler('chat.log', encoding='utf-8')])
+
+sock = socket.socket()
+
+sock.connect((server, port))
+
+sock.send(f"PASS {token}\n".encode('utf-8'))
+sock.send(f"NICK {nickname}\n".encode('utf-8'))
+sock.send(f"JOIN {channel}\n".encode('utf-8'))
+
+resp = sock.recv(2048).decode('utf-8')
+
+#print(resp)
+logging.info(resp)
+
+sock.close()
+"""
