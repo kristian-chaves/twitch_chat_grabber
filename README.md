@@ -8,4 +8,5 @@ i tried making a twitch chat grabber, ngl i was sorta tipsy while coding like ha
       - if it does not do this, mb whoops
     - if chat correctly guesses the word within allotted guesses, chat wins!
       - if not, L
+
 i recognize a lot of the uncertainty of this readme and this repository could be removed by me just removing the unnecessary files and reading through my code once, but i have convinced myself that if i do that the terrorists win 
