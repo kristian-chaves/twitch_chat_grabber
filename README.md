@@ -1,8 +1,8 @@
 # twitch_chat_grabber
 
-i tried making a twitch chat grabber, ngl i was sorta tipsy while coding like half of this but from what i remember 
+i tried making a twitch chat grabber, ngl i was sorta tipsy while coding like half of this but from what i remember:
   - run one of the files (probs main.js?) concurrently with main.py
-    - i meant to code this to automatically code concurrently but i think i fell asleep
+    - i meant to code this to automatically run code concurrently but i think i fell asleep
   - it grabs inputs from a channel (boxbox is the default i think), and i think the python wordle file runs with like a seconds delay
     - every n seconds it hashes a bunch of inputs, checks if its a valid word length, and if so, runs it as a valid word
       - if it does not do this, mb whoops
